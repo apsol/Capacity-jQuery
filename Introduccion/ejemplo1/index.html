@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	    <meta charset="utf-8" />
+	    <script src="scripts/jquery-2.1.3.js"></script>
+	    <script type="text/javascript">
+	    	$(function(){
+	    		var imagen = $('#imagen');
+	    		imagen.click(function(){
+	    			imagen.slideUp();
+	    		});
+
+	    		var boton = $('#boton');
+	    		boton.click(function(){
+	    			imagen.slideDown();
+	    		});
+
+	    	})
+	    </script>
+	</head>
+	<body>
+		<img id='imagen'  src="images/logo-grande.jpg">
+		<div id='boton'> botón </div>
+	</body>
+</html>
