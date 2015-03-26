@@ -5,21 +5,51 @@
 	    <script src="scripts/jquery-2.1.3.js"></script>
 	    <script type="text/javascript">
 	    	$(function(){
+
 	    		var imagen = $('#imagen');
-	    		imagen.click(function(){
+
+
+	    		// mediante el uso de slide el objeto se achica hasta desaparecer...
+	    		var slideDown = $('#slideDown');
+	    		slideDown.click(function(){
+	    			$('#imagen').slideDown();
+	    		});
+
+	    		var slideToggle = $('#slideToggle');
+	    		slideToggle.click(function(){
+	    			imagen.slideToggle();
+	    		});
+
+	    		var slideUp = $('#slideUp');
+	    		slideUp.click(function(){
 	    			imagen.slideUp();
 	    		});
 
-	    		var boton = $('#boton');
-	    		boton.click(function(){
-	    			imagen.slideDown();
+
+	    		// con fade el objeo desaparece repentinamente..
+
+	    		var hoberSlideUp = $('#hoberSlideUp');
+	    		hoberSlideUp.hover(function(){
+	    			imagen.fadeIn();
 	    		});
 
+	    		var hoberSslideDown = $('#hoberSslideDown');
+	    		hoberSslideDown.hover(function(){
+	    			imagen.fadeOut();
+	    		});
 	    	})
 	    </script>
 	</head>
 	<body>
 		<img id='imagen'  src="images/logo-grande.jpg">
-		<div id='boton'> botón </div>
+		<p>funcionan al hacer clic...</p>
+		<div id='slideUp'>.slideUp()()</div>		
+		<div id='slideDown'>slideDown()</div>
+		<p></p>
+		<div id='slideToggle'>.slideToggle()</div>
+		<p>funcionan al hacer pasar el mouse....</p>
+		<div id='hoberSlideUp'>.slideUp()()</div>		
+		<div id='hoberSslideDown'>slideDown()</div>
+
 	</body>
 </html>
