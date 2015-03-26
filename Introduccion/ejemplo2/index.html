@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	    <meta charset="utf-8" />
+	    <script src="scripts/jquery-2.1.3.js"></script>
+	    <script type="text/javascript">
+	    	$(function(){
+
+	    		/*		
+	    		// mediante el uso de slide el objeto se achica hasta desaparecer...
+	    		var slideDown = $('#slideDown');
+	    		slideDown.click(function(){
+	    			$('#imagen').slideDown();
+	    		});
+				*/
+
+	    	})
+	    </script>
+	    <style>
+	    	.seleccionado{
+	    		background-color: yellow;
+	    	}
+	    </style>
+	</head>
+	<body>
+
+		<table>
+			<tr>
+				 <td>
+						<table border="1">
+							<tbody><tr height="50">
+							 	<th>Selector</th>
+								<th>Selecciona</th>
+								<th>Ejemplo</th>
+							</tr></tbody>
+							<tr height="50">
+							 	<td >$('*')</td>
+								<td>Todo el documento</td>
+								<td><input id='asterisco' value='seleccionar'  type="button"></td>
+							</tr>
+							<tr height="50">
+							 	<td>$('#id')</td>
+								<td>Elemento con el ID </td>
+								<td><input id='seleccionarId' value='seleccionar'  type="button"></td>
+							</tr>
+							<tr height="50">
+							 	<td>$('.class')</td>
+								<td>Elemento con la clase </td>
+								<td><input id='seleccionarClass' value='seleccionar'  type="button"></td>
+							</tr>
+							<tr height="50">
+							 	<td>$('div')</td>
+								<td>El elemento de tipo div</td>
+								<td><input id='seleccionarDiv' value='seleccionar'  type="button"></td>
+							</tr>
+						</table>
+				</td>
+				<td>
+						<table border="1">
+							<tr class="seleccionado" height="50">
+							 	<td></td>
+							</tr>
+							<tr height="50">
+							 	<td>Seleccionamos todo</td>
+							</tr>
+							<tr height="50">
+							 	<td id='tdPorId'>Esta es la fila con id definido</td>
+							</tr>
+							<tr height="50">
+							 	<td class='tdPorClass'>Esta otra fila solo tiene clase definida</td>
+							</tr>
+							<tr height="50">
+							 	<td><div>este es el div en cuestion..</div></td>
+							</tr>
+						</table>
+				</td>
+			</tr>
+		</table>
+
+
+
+
+
+	</body>
+</html>
