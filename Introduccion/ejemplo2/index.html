@@ -6,13 +6,29 @@
 	    <script type="text/javascript">
 	    	$(function(){
 
-	    		/*		
-	    		// mediante el uso de slide el objeto se achica hasta desaparecer...
-	    		var slideDown = $('#slideDown');
-	    		slideDown.click(function(){
-	    			$('#imagen').slideDown();
+	    		// funcion para seleccionar todo 
+	    		var asterisco = $('#asterisco');
+	    		asterisco.click(function(){
+	    			$('*').addClass('seleccionado');
 	    		});
-				*/
+
+	    		// seleccionar solo el id especifico
+	    		var seleccionarId = $('#seleccionarId');
+	    		seleccionarId.click(function(){
+	    			$('#tdPorId').addClass('seleccionado');
+	    		});
+
+	    		// seleccionar la clase especifica
+	    		var seleccionarClass = $('#seleccionarClass');
+	    		seleccionarClass.click(function(){
+	    			$('.tdPorClass').addClass('seleccionado');
+	    		});
+
+				// seleccionamos el elementos div
+				var seleccionarDiv = $('#seleccionarDiv');
+	    		seleccionarDiv.click(function(){
+	    			$('div').addClass('seleccionado');
+	    		});
 
 	    	})
 	    </script>
