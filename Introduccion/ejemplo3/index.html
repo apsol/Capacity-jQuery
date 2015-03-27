@@ -6,28 +6,31 @@
 	    <script type="text/javascript">
 	    	$(function(){
 
-	    		/*
-	    		var estado = 0;
-	    		// funcion para seleccionar todo 
-	    		var asterisco = $('#asterisco');
-	    		asterisco.click(function(){
-	    			if (estado ==0 ) {
-	    				$('*').addClass('seleccionado');
-	    				estado =1;
-	    			} else {
-    					$('*').removeClass('seleccionado');
-	    				estado =0;
-					}
-	    			
+	    		$('#agregarTelefono').click(function(){
+	    			$('#telefonos').append('<div><input type="text" placeholder="otro" /><button class="borrarTelefono" onclick="eliminarTelefono(this);">X</button></div>');	
 	    		});
-				*/
 
+	    		$('#btnEnviar').click(function(){
+	    			var nombre = $('#nombre').val();
+	    			var apellido = $('#apellido').val();
+
+	    			console.log('El nombre es: ' + nombre + ' y el apellido es: ' + apellido );
+	    		});
 	    	})
+
+	    	function eliminarTelefono(telefono){
+	    		console.log('estoy dentro');
+	    		$(telefono).parent().remove();
+	    	}	
 	    </script>
 	    <style>
 	    	.formulario{
 	    		background-color: white; 
 	    		width: 300px;
+	    	}
+
+	    	.borrarTelefono{
+	    		color: red;
 	    	}
 	    </style>
 	</head>
@@ -48,7 +51,7 @@
 			 	<div><input type="text" placeholder="casa" /></div>	 	
 			</fieldset>
 			<div>
-				<button id="enviarFormulario">Enviar formulario</button>
+				<button id="btnEnviar">Enviar formulario</button>
 				<button id="agregarTelefono">Agregar Teléfono</button>
 			</div>
 
