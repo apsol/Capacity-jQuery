@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	    <meta charset="utf-8" />
+	    <script src="scripts/jquery-2.1.3.js"></script>
+	    <script type="text/javascript">
+	    	$(function(){
+
+	    		/*
+	    		var estado = 0;
+	    		// funcion para seleccionar todo 
+	    		var asterisco = $('#asterisco');
+	    		asterisco.click(function(){
+	    			if (estado ==0 ) {
+	    				$('*').addClass('seleccionado');
+	    				estado =1;
+	    			} else {
+    					$('*').removeClass('seleccionado');
+	    				estado =0;
+					}
+	    			
+	    		});
+				*/
+
+	    	})
+	    </script>
+	    <style>
+	    	.formulario{
+	    		background-color: white; 
+	    		width: 300px;
+	    	}
+	    </style>
+	</head>
+	<body>
+	
+		<div id="formulario" class="formulario">
+			<div>
+			 	<h2>Envío de formulario</h2>
+			 </div> 
+			 <fieldset>	
+	 			<label>Nombre: </label><input type="text" id="nombre" /><br/>
+				<label>Apellido: </label><input type="text" id="apellido" /><br/>
+				<label>Correo: </label><input type="text" id="correo" /><br/>
+				<label>Comentario: </label><textarea name="Comentario" id="comentario" cols="30" rows="5"/></textarea><br/>
+			</fieldset>
+			<fieldset id="telefonos">
+				<strong>Telefonos</strong><br/>
+			 	<div><input type="text" placeholder="casa" /></div>	 	
+			</fieldset>
+			<div>
+				<button id="enviarFormulario">Enviar formulario</button>
+				<button id="agregarTelefono">Agregar Teléfono</button>
+			</div>
+
+		</div>
+	
+	</body>
+</html>

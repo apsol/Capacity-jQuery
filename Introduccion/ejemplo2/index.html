@@ -6,10 +6,18 @@
 	    <script type="text/javascript">
 	    	$(function(){
 
+	    		var estado = 0;
 	    		// funcion para seleccionar todo 
 	    		var asterisco = $('#asterisco');
 	    		asterisco.click(function(){
-	    			$('*').addClass('seleccionado');
+	    			if (estado ==0 ) {
+	    				$('*').addClass('seleccionado');
+	    				estado =1;
+	    			} else {
+    					$('*').removeClass('seleccionado');
+	    				estado =0;
+					}
+	    			
 	    		});
 
 	    		// seleccionar solo el id especifico
