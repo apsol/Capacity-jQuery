@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	    <meta charset="utf-8" />
+	    <script src="scripts/jquery-2.1.3.js"></script>
+	    <script type="text/javascript">
+	    	$(function(){
+	    		
+	    		var contador = 0;	    		
+
+	    		$('#agregarTelefono').click(function(){
+	    			$('#telefonos').append('<div><input type="text" placeholder="otro" /><button class="borrarTelefono" onclick="eliminarTelefono(this);">X</button></div>');
+	    			contador--;	
+	    		});
+
+	    		$('#btnEnviar').click(function(){
+	    			var nombre = $('#nombre').val();
+	    			var apellido = $('#apellido').val();	    			
+	    			if(contador == 1){
+	    				$('<h1>El nombre es: ' + nombre + ' y el apellido es: ' + apellido + '</h1><p>Como apretaste por segunda vez consecutiva....</p>').replaceAll('#formulario');
+	    			}else{
+	    				console.log('El nombre es: ' + nombre + ' y el apellido es: ' + apellido );
+	    				contador++;
+	    			}
+
+
+
+
+
+
+	    		});
+	    	})
+
+	    	function eliminarTelefono(telefono){
+	    		console.log('estoy dentro');
+	    		$(telefono).parent().remove();
+	    	}	
+	    </script>
+	    <style>
+	    	.error{
+	    		border: solid 2px red; 
+	    		color: red;
+	    	}   
+	    	.formulario{
+	    		background-color: white; 
+	    		width: 300px;
+	    	}
+
+	    	.borrarTelefono{
+	    		color: red;
+	    	}
+	    </style>
+	</head>
+	<body>
+	
+		<div id="formulario" class="formulario">
+			<div>
+			 	<h2>Envío de formulario</h2>
+			 </div> 
+			 <fieldset>	
+	 			<label>Nombre: </label><input type="text" id="nombre" /><br/>
+				<label>Apellido: </label><input type="text" id="apellido" /><br/>
+				<label>Correo: </label><input type="text" id="correo" /><br/>
+				<label>Comentario: </label><textarea name="Comentario" id="comentario" cols="30" rows="5"/></textarea><br/>
+			</fieldset>
+			<fieldset id="telefonos">
+				<strong>Telefonos</strong><br/>
+			 	<div><input type="text" placeholder="casa" /></div>	 	
+			</fieldset>
+			<div>
+				<button id="btnEnviar">Enviar formulario</button>
+				<button id="agregarTelefono">Agregar Teléfono</button>
+			</div>
+
+		</div>
+	
+	</body>
+</html>
