@@ -15,18 +15,27 @@
 
 	    		$('#btnEnviar').click(function(){
 	    			var nombre = $('#nombre').val();
-	    			var apellido = $('#apellido').val();	    			
-	    			if(contador == 1){
+	    			var apellido = $('#apellido').val();
+	    			var formularioValido = true;
+
+	    			/* Validando el Formulario*/
+	    			// Pido todos los input y los textarea del sitio.
+	    			$('input,textarea').each(function(index,elemento){
+	    				if( $(elemento).val() == ''){
+	    					$(elemento).addClass('error');
+	    					$(elemento).attr('placeholder','Campo requerido');
+	    					formularioValido = false;
+	    				} else {
+	    					$(elemento).removeClass('error');
+	    					formularioValido = true;
+	    				}
+
+
+	    			});	
+	    			
+	    			if(formularioValido == true){
 	    				$('<h1>El nombre es: ' + nombre + ' y el apellido es: ' + apellido + '</h1><p>Como apretaste por segunda vez consecutiva....</p>').replaceAll('#formulario');
-	    			}else{
-	    				console.log('El nombre es: ' + nombre + ' y el apellido es: ' + apellido );
-	    				contador++;
-	    			}
-
-
-
-
-
+	    			}		
 
 	    		});
 	    	})
@@ -40,7 +49,8 @@
 	    	.error{
 	    		border: solid 2px red; 
 	    		color: red;
-	    	}   
+	    	}
+
 	    	.formulario{
 	    		background-color: white; 
 	    		width: 300px;
