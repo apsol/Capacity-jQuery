@@ -4,12 +4,41 @@
 	    <meta charset="utf-8" />
 	    <script src="scripts/jquery-2.1.3.js"></script>
 	    <script type="text/javascript">
-	    alert($('#txtNombre').val());
-	    
-	    	$(document).ready(function(){
-	    		alert($('#txtNombre').val());
-	    	});
+	    	$(function(){
+	    		var i = 0;
 
+	    		// ver el ejemplo completo en 
+	    		// http://jsfiddle.net/YjC6y/2656/
+	    		//
+
+	    		$('#btnEnviar').bind('mouseenter', function() {
+					var self = $(this);
+					    this.iid = setInterval(function() {
+					       //self.val(i);  esta no funciona,  en el ejemplo esta        self.text(contador);
+					       $('#txtNombre').val(i);
+					       $('#txtApellido').val(i*2);
+					       $('#txtEdad').val(i*3);					       
+					       i++;
+					    }, (0));
+					}).bind('mouseleave', function(){
+					    this.iid && clearInterval(this.iid);
+					});
+
+				// Este es el que disminuye el numero...
+	    		$('#btnSubmit').bind('mouseenter', function() {
+					var self = $(this);
+					    this.iid = setInterval(function() {
+					       self.val(i);
+					       $('#txtNombre').val(i);
+					       $('#txtApellido').val(i*2);
+					       $('#txtEdad').val(i*3);					       
+					       i--;
+					    }, (0));
+					}).bind('mouseleave', function(){
+					    this.iid && clearInterval(this.iid);
+					});
+
+				});
 	    </script>
 	    <style>
 	    	.error{
@@ -39,7 +68,7 @@
 				<label>Edad: </label><input type="text" id="txtEdad" /><br/><br/>
 			</form>
 			<div>
-				<button id="btnClick">Evento Click</button>
+				<button id="btnEnviar">Evento Click</button>
 				<button id="btnSubmit">Evento Submit</button>
 			</div>
 
